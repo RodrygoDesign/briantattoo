@@ -16,7 +16,7 @@
 </head>
 <body>
   <header class="site-header" data-header>
-    <a class="brand" href="#inicio" aria-label="Ir al inicio">
+    <a class="brand" href="#trabajo" aria-label="Ir al inicio">
       <span class="brand__mark">BT</span>
       <span>
         <strong>BrianTattoo</strong>
@@ -27,19 +27,21 @@
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
       <span class="nav-toggle__line"></span>
       <span class="nav-toggle__line"></span>
+      <span class="nav-toggle__line"></span>
       <span class="sr-only">Abrir menu</span>
     </button>
 
     <nav class="site-nav" id="site-nav" data-nav>
-      <a href="#sobre-mi">Sobre Brian</a>
       <a href="#trabajo">Trabajo</a>
+      <a href="#sobre-mi">Sobre Brian</a>
       <a href="#ubicacion">Elche</a>
       <a class="nav-cta" href="#reserva">Reservar</a>
+      <a class="nav-call" href="tel:+34643665793">Llamar</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero" id="inicio" aria-label="Presentacion de BrianTattoo">
+        <section class="hero hero--secondary" id="inicio" aria-label="Presentacion de BrianTattoo">
       <img class="hero__bg" src="https://images.unsplash.com/photo-1775135981378-4e7c1767436d?auto=format&fit=crop&w=1900&q=82" alt="Imagen de referencia de una sesion de tatuaje en estudio" fetchpriority="high">
       <div class="hero__shade"></div>
       <div class="hero__content reveal">
@@ -59,71 +61,13 @@
         </div>
       </div>
 
-      <dl class="hero__metrics reveal" aria-label="Datos destacados">
-        <div>
-          <dt>8</dt>
-          <dd>años de experiencia</dd>
-        </div>
-        <div>
-          <dt>Elche</dt>
-          <dd>citas con reserva previa</dd>
-        </div>
-        <div>
-          <dt>3</dt>
-          <dd>especialidades clave</dd>
-        </div>
-      </dl>
     </section>
-
-    <section class="paper-section about" id="sobre-mi">
-      <div class="section-inner about__grid">
-        <div class="about__media reveal">
-          <img class="about__main" src="https://images.unsplash.com/photo-1753259789341-808371092e19?auto=format&fit=crop&w=900&q=82" alt="Imagen de referencia de tatuador preparando una sesion" loading="lazy" decoding="async">
-          <img class="about__side" src="https://images.unsplash.com/photo-1679585651020-9ae0653c84ad?auto=format&fit=crop&w=640&q=82" alt="Detalle de maquina de tatuaje durante una sesion" loading="lazy" decoding="async">
-        </div>
-
-        <div class="about__copy reveal">
-          <p class="eyebrow eyebrow--dark">Quien es BrianTattoo</p>
-          <h2>Realismo, sombra y una pieza pensada para tu piel.</h2>
-          <p>Soy Brian, tatuador con 8 años de experiencia especializado en realismo, blackwork y sombras. He desarrollado piezas reconocidas por su nivel de detalle, contraste y durabilidad, consolidando un estilo propio que mezcla tecnica y creatividad.</p>
-          <p>Trabajo con clientes locales e internacionales para crear tatuajes personalizados con una historia clara. Mi enfoque es la precision, la higiene y la excelencia artistica en cada sesion.</p>
-          <a class="text-link" href="#trabajo">Descubre el portafolio completo</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="dark-section specialties" aria-labelledby="especialidades-title">
-      <div class="section-inner">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Especialidades</p>
-          <h2 id="especialidades-title">Piezas con contraste, lectura y caracter.</h2>
-        </div>
-
-        <div class="specialty-grid">
-          <article class="specialty-card reveal">
-            <span class="card-number">01</span>
-            <h3>Black and gray realism</h3>
-            <p>Retratos, composiciones simbolicas y piezas de alto detalle construidas con degradados, volumen y lectura visual.</p>
-          </article>
-          <article class="specialty-card reveal">
-            <span class="card-number">02</span>
-            <h3>Blackwork</h3>
-            <p>Negros solidos, composiciones de impacto y estructuras limpias para piezas que envejecen con fuerza.</p>
-          </article>
-          <article class="specialty-card reveal">
-            <span class="card-number">03</span>
-            <h3>Sombras y contraste</h3>
-            <p>Texturas, fondos y transiciones pensadas para dar profundidad, equilibrio y acabado profesional.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="work" id="trabajo" aria-labelledby="trabajo-title">
+    <section class="work work--primary" id="trabajo" aria-labelledby="trabajo-title">
       <div class="section-inner">
         <div class="section-heading section-heading--center reveal">
-          <p class="eyebrow">The work</p>
-          <h2 id="trabajo-title">Serie de tatuajes y referencias de estilo.</h2>
+          <p class="eyebrow">Portafolio</p>
+          <h2 id="trabajo-title">The Work</h2>
+          <p>Serie de tatuajes y referencias de estilo.</p>
         </div>
 
         <div class="filter-bar reveal" role="group" aria-label="Filtrar trabajos">
@@ -170,6 +114,68 @@
               <span>Geometria</span>
             </button>
           </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="paper-section about" id="sobre-mi">
+      <div class="section-inner about__grid">
+        <div class="about__media reveal">
+          <img class="about__main" src="https://images.unsplash.com/photo-1753259789341-808371092e19?auto=format&fit=crop&w=900&q=82" alt="Imagen de referencia de tatuador preparando una sesion" loading="lazy" decoding="async">
+          <img class="about__side" src="https://images.unsplash.com/photo-1679585651020-9ae0653c84ad?auto=format&fit=crop&w=640&q=82" alt="Detalle de maquina de tatuaje durante una sesion" loading="lazy" decoding="async">
+        </div>
+
+        <div class="about__copy reveal">
+          <p class="eyebrow eyebrow--dark">Quien es BrianTattoo</p>
+          <h2>Realismo, sombra y una pieza pensada para tu piel.</h2>
+          <p>Soy Brian, tatuador con 8 años de experiencia especializado en realismo, blackwork y sombras. He desarrollado piezas reconocidas por su nivel de detalle, contraste y durabilidad, consolidando un estilo propio que mezcla tecnica y creatividad.</p>
+          <p>Trabajo con clientes locales e internacionales para crear tatuajes personalizados con una historia clara. Mi enfoque es la precision, la higiene y la excelencia artistica en cada sesion.</p>
+          <a class="text-link" href="#trabajo">Descubre el portafolio completo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section specialties" aria-labelledby="especialidades-title">
+      <div class="section-inner specialties__inner">
+        <div class="specialties__intro reveal">
+          <p class="eyebrow">Especialidades</p>
+          <h2 id="especialidades-title">Piezas con contraste, lectura y caracter.</h2>
+          <p>El trabajo se decide por composicion, zona del cuerpo y envejecimiento en piel. Cada estilo se ajusta antes de entrar a sesion.</p>
+        </div>
+
+        <div class="specialties__composition">
+          <figure class="specialties__image reveal">
+            <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=900&q=82" alt="Referencia de tatuaje en negro y gris con alto contraste" loading="lazy" decoding="async">
+            <figcaption>Black and gray / contraste / sombra</figcaption>
+          </figure>
+
+          <div class="specialty-lines">
+            <article class="specialty-line reveal">
+              <span>01</span>
+              <div>
+                <h3>Realismo en negro y gris</h3>
+                <p>Retratos, simbolos y composiciones de detalle alto, trabajadas con volumen y degradados controlados.</p>
+              </div>
+              <small>Retrato / volumen / detalle fino</small>
+            </article>
+            <article class="specialty-line reveal">
+              <span>02</span>
+              <div>
+                <h3>Blackwork</h3>
+                <p>Negros solidos y estructuras limpias para piezas directas, potentes y faciles de leer con el paso del tiempo.</p>
+              </div>
+              <small>Solido / geometria / impacto</small>
+            </article>
+            <article class="specialty-line reveal">
+              <span>03</span>
+              <div>
+                <h3>Sombras y contraste</h3>
+                <p>Fondos, transiciones y texturas que conectan la pieza con la anatomia sin perder profundidad.</p>
+              </div>
+              <small>Textura / fondo / composicion</small>
+            </article>
+          </div>
         </div>
       </div>
     </section>

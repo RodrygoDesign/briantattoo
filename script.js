@@ -31,6 +31,7 @@ if (navToggle && header && nav) {
     const isOpen = header.classList.toggle("is-open");
     document.body.classList.toggle("nav-open", isOpen);
     navToggle.setAttribute("aria-expanded", String(isOpen));
+    navToggle.querySelector(".sr-only").textContent = isOpen ? "Cerrar menu" : "Abrir menu";
   });
 
   nav.addEventListener("click", (event) => {
@@ -39,6 +40,7 @@ if (navToggle && header && nav) {
     header.classList.remove("is-open");
     document.body.classList.remove("nav-open");
     navToggle.setAttribute("aria-expanded", "false");
+    navToggle.querySelector(".sr-only").textContent = "Abrir menu";
   });
 }
 
@@ -91,6 +93,8 @@ document.addEventListener("keydown", (event) => {
     header?.classList.remove("is-open");
     document.body.classList.remove("nav-open");
     navToggle?.setAttribute("aria-expanded", "false");
+    const navLabel = navToggle?.querySelector(".sr-only");
+    if (navLabel) navLabel.textContent = "Abrir menu";
   }
 });
 
