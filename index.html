@@ -16,7 +16,7 @@
 </head>
 <body>
   <header class="site-header" data-header>
-    <a class="brand" href="#trabajo" aria-label="Ir al inicio">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">
       <span class="brand__mark">BT</span>
       <span>
         <strong>BrianTattoo</strong>
@@ -31,89 +31,91 @@
       <span class="sr-only">Abrir menu</span>
     </button>
 
-    <nav class="site-nav" id="site-nav" data-nav>
-      <a href="#trabajo">Trabajo</a>
-      <a href="#sobre-mi">Sobre Brian</a>
-      <a href="#ubicacion">Elche</a>
-      <a class="nav-cta" href="#reserva">Reservar</a>
-      <a class="nav-call" href="tel:+34643665793">Llamar</a>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Navegacion principal">
+      <div class="site-nav__links">
+        <a href="#trabajo">Trabajo</a>
+        <a href="#sobre-mi">Sobre Brian</a>
+        <a href="#ubicacion">Elche</a>
+      </div>
+      <div class="site-nav__actions">
+        <a class="nav-cta" href="#reserva">Reservar</a>
+        <a class="nav-call" href="tel:+34643665793">Llamar</a>
+      </div>
     </nav>
   </header>
 
   <main>
-        <section class="hero hero--secondary" id="inicio" aria-label="Presentacion de BrianTattoo">
-      <img class="hero__bg" src="https://images.unsplash.com/photo-1775135981378-4e7c1767436d?auto=format&fit=crop&w=1900&q=82" alt="Imagen de referencia de una sesion de tatuaje en estudio" fetchpriority="high">
-      <div class="hero__shade"></div>
-      <div class="hero__content reveal">
-        <p class="eyebrow">Tatuador en Elche</p>
-        <h1>BrianTattoo</h1>
-        <p class="hero__lead">Black and gray realism, blackwork y sombras para piezas personalizadas que cuentan historias con precision, contraste y durabilidad.</p>
-        <p class="hero__copy">Soy Brian, tatuador especializado en realismo, blackwork y sombras. Acompaño cada idea desde el concepto hasta el resultado final, priorizando higiene, tecnica y calidad en cada sesion.</p>
-        <div class="hero__actions">
-          <a class="button button--light" href="#reserva">
-            <span>Reservar cita</span>
-            <span class="button__icon" aria-hidden="true">↗</span>
-          </a>
-          <a class="button button--ghost" href="#trabajo">
-            <span>Ver portafolio</span>
-            <span class="button__icon" aria-hidden="true">↓</span>
-          </a>
-        </div>
+    <section class="intro-hero" id="inicio" aria-labelledby="hero-title">
+      <div class="intro-hero__copy">
+        <p class="intro-hero__eyebrow">Tatuador en Elche</p>
+        <h1 class="intro-hero__title" id="hero-title" aria-label="Brian Tattoo">
+          <span><span>Brian</span></span>
+          <span><span>Tattoo</span></span>
+        </h1>
+        <p class="intro-hero__tagline">
+          <span>Realismo black and gray</span>
+          <span>Blackwork, sombra y piezas pensadas para la piel.</span>
+        </p>
       </div>
 
+      <figure class="intro-hero__media" aria-label="Imagen del tatuador en sesion">
+        <img src="https://images.unsplash.com/photo-1597852075234-fd721ac361d3?fm=png&fit=crop&w=1500&q=82" alt="Tatuador trabajando una pieza en el brazo de un cliente" fetchpriority="high">
+      </figure>
+
+      <div class="intro-hero__footer section-inner">
+        <a class="button button--light" href="#reserva">
+          <span>Reservar cita</span>
+          <span class="button__icon" aria-hidden="true">↗</span>
+        </a>
+        <a class="button button--ghost" href="#trabajo">
+          <span>Ver galeria</span>
+          <span class="button__icon" aria-hidden="true">↓</span>
+        </a>
+      </div>
     </section>
-    <section class="work work--primary" id="trabajo" aria-labelledby="trabajo-title">
-      <div class="section-inner">
-        <div class="section-heading section-heading--center reveal">
-          <p class="eyebrow">Portafolio</p>
-          <h2 id="trabajo-title">The Work</h2>
-          <p>Serie de tatuajes y referencias de estilo.</p>
-        </div>
 
-        <div class="filter-bar reveal" role="group" aria-label="Filtrar trabajos">
-          <button class="filter-button is-active" type="button" data-filter="all">Todos</button>
-          <button class="filter-button" type="button" data-filter="realismo">Realismo</button>
-          <button class="filter-button" type="button" data-filter="blackwork">Blackwork</button>
-          <button class="filter-button" type="button" data-filter="proceso">Proceso</button>
-        </div>
+    <section class="scroll-gallery" id="trabajo" aria-labelledby="trabajo-title" data-scroll-gallery>
+      <div class="section-inner scroll-gallery__intro">
+        <p class="eyebrow">Portafolio</p>
+        <h2 id="trabajo-title">Piezas que aparecen al bajar.</h2>
+      </div>
 
-        <div class="work-grid" data-gallery>
-          <article class="work-item work-item--tall reveal" data-category="realismo" data-title="Flor negra y detalle fino">
-            <button class="work-item__button" type="button" aria-label="Ver Flor negra y detalle fino">
-              <img src="https://images.unsplash.com/photo-1562379825-415aea84ebcf?auto=format&fit=crop&w=850&q=82" alt="Tatuaje floral negro en cuello" loading="lazy" decoding="async">
-              <span>Flor negra</span>
-            </button>
-          </article>
-          <article class="work-item reveal" data-category="proceso" data-title="Linea, sombra y preparacion">
-            <button class="work-item__button" type="button" aria-label="Ver Linea, sombra y preparacion">
-              <img src="https://images.unsplash.com/photo-1597852075234-fd721ac361d3?auto=format&fit=crop&w=850&q=82" alt="Detalle de tatuador trabajando una pieza en brazo" loading="lazy" decoding="async">
-              <span>Linea precisa</span>
-            </button>
-          </article>
-          <article class="work-item work-item--wide reveal" data-category="blackwork" data-title="Contraste sobre manga">
-            <button class="work-item__button" type="button" aria-label="Ver Contraste sobre manga">
-              <img src="https://images.unsplash.com/photo-1479767574301-a01c78234a0c?auto=format&fit=crop&w=1100&q=82" alt="Brazo con tatuaje de estilo tradicional oscuro" loading="lazy" decoding="async">
-              <span>Contraste</span>
-            </button>
-          </article>
-          <article class="work-item reveal" data-category="proceso" data-title="Sesion black and gray">
-            <button class="work-item__button" type="button" aria-label="Ver Sesion black and gray">
-              <img src="https://images.unsplash.com/photo-1761276297686-f507ca9fe8b6?auto=format&fit=crop&w=850&q=82" alt="Tatuador trabajando sobre el hombro de un cliente" loading="lazy" decoding="async">
-              <span>Sesion</span>
-            </button>
-          </article>
-          <article class="work-item work-item--tall reveal" data-category="realismo" data-title="Espalda en negro y gris">
-            <button class="work-item__button" type="button" aria-label="Ver Espalda en negro y gris">
-              <img src="https://images.unsplash.com/photo-1740239986116-6c04b956f9d3?auto=format&fit=crop&w=850&q=82" alt="Tatuaje de espalda en blanco y negro" loading="lazy" decoding="async">
-              <span>Back piece</span>
-            </button>
-          </article>
-          <article class="work-item reveal" data-category="blackwork" data-title="Geometria y sombras">
-            <button class="work-item__button" type="button" aria-label="Ver Geometria y sombras">
-              <img src="https://images.unsplash.com/photo-1758404255679-9afd847ede1c?auto=format&fit=crop&w=850&q=82" alt="Tatuaje geometrico con sombras durante el proceso" loading="lazy" decoding="async">
-              <span>Geometria</span>
-            </button>
-          </article>
+      <div class="scroll-gallery__stage">
+        <div class="scroll-gallery__sticky">
+          <div class="scroll-gallery__grid" data-scroll-grid aria-label="Galeria animada de tatuajes">
+            <figure class="scroll-gallery__item">
+              <img src="https://images.unsplash.com/photo-1562379825-415aea84ebcf?auto=format&fit=crop&w=900&q=82" alt="Tatuaje floral negro en cuello" loading="lazy" decoding="async">
+              <figcaption>Flor negra</figcaption>
+            </figure>
+            <figure class="scroll-gallery__item">
+              <img src="https://images.unsplash.com/photo-1479767574301-a01c78234a0c?auto=format&fit=crop&w=900&q=82" alt="Brazo con tatuaje oscuro de alto contraste" loading="lazy" decoding="async">
+              <figcaption>Contraste</figcaption>
+            </figure>
+            <figure class="scroll-gallery__item">
+              <img src="https://images.unsplash.com/photo-1758404255679-9afd847ede1c?auto=format&fit=crop&w=900&q=82" alt="Tatuaje geometrico con sombras durante el proceso" loading="lazy" decoding="async">
+              <figcaption>Geometria</figcaption>
+            </figure>
+            <figure class="scroll-gallery__item">
+              <img src="https://images.unsplash.com/photo-1597852075234-fd721ac361d3?auto=format&fit=crop&w=900&q=82" alt="Detalle de tatuador trabajando una pieza en brazo" loading="lazy" decoding="async">
+              <figcaption>Linea</figcaption>
+            </figure>
+            <figure class="scroll-gallery__item">
+              <img src="https://images.unsplash.com/photo-1761276297686-f507ca9fe8b6?auto=format&fit=crop&w=900&q=82" alt="Tatuador trabajando sobre el hombro de un cliente" loading="lazy" decoding="async">
+              <figcaption>Sesion</figcaption>
+            </figure>
+            <figure class="scroll-gallery__item">
+              <img src="https://images.unsplash.com/photo-1740239986116-6c04b956f9d3?auto=format&fit=crop&w=900&q=82" alt="Tatuaje de espalda en blanco y negro" loading="lazy" decoding="async">
+              <figcaption>Back piece</figcaption>
+            </figure>
+            <figure class="scroll-gallery__item">
+              <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=900&q=82" alt="Tatuaje en negro y gris con alto contraste" loading="lazy" decoding="async">
+              <figcaption>Sombra</figcaption>
+            </figure>
+            <figure class="scroll-gallery__item">
+              <img src="https://images.unsplash.com/photo-1679585651020-9ae0653c84ad?auto=format&fit=crop&w=900&q=82" alt="Detalle de maquina de tatuaje durante una sesion" loading="lazy" decoding="async">
+              <figcaption>Proceso</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>
@@ -136,46 +138,35 @@
       </div>
     </section>
 
-    <section class="dark-section specialties" aria-labelledby="especialidades-title">
-      <div class="section-inner specialties__inner">
-        <div class="specialties__intro reveal">
-          <p class="eyebrow">Especialidades</p>
-          <h2 id="especialidades-title">Piezas con contraste, lectura y caracter.</h2>
-          <p>El trabajo se decide por composicion, zona del cuerpo y envejecimiento en piel. Cada estilo se ajusta antes de entrar a sesion.</p>
+    <section class="dark-section studio-gallery" aria-labelledby="galeria-title">
+      <div class="section-inner studio-gallery__inner">
+        <div class="studio-gallery__heading reveal">
+          <p class="eyebrow">Galeria</p>
+          <h2 id="galeria-title">Detalle, piel y proceso real.</h2>
+          <p>Una seleccion visual del estilo de BrianTattoo: contraste, linea, sombra y sesiones trabajadas con calma.</p>
         </div>
 
-        <div class="specialties__composition">
-          <figure class="specialties__image reveal">
-            <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=900&q=82" alt="Referencia de tatuaje en negro y gris con alto contraste" loading="lazy" decoding="async">
-            <figcaption>Black and gray / contraste / sombra</figcaption>
+        <div class="studio-gallery__track" aria-label="Galeria de imagenes">
+          <figure class="studio-gallery__item reveal">
+            <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=900&q=82" alt="Tatuaje en negro y gris con alto contraste" loading="lazy" decoding="async">
+            <figcaption>Sombra y contraste</figcaption>
           </figure>
-
-          <div class="specialty-lines">
-            <article class="specialty-line reveal">
-              <span>01</span>
-              <div>
-                <h3>Realismo en negro y gris</h3>
-                <p>Retratos, simbolos y composiciones de detalle alto, trabajadas con volumen y degradados controlados.</p>
-              </div>
-              <small>Retrato / volumen / detalle fino</small>
-            </article>
-            <article class="specialty-line reveal">
-              <span>02</span>
-              <div>
-                <h3>Blackwork</h3>
-                <p>Negros solidos y estructuras limpias para piezas directas, potentes y faciles de leer con el paso del tiempo.</p>
-              </div>
-              <small>Solido / geometria / impacto</small>
-            </article>
-            <article class="specialty-line reveal">
-              <span>03</span>
-              <div>
-                <h3>Sombras y contraste</h3>
-                <p>Fondos, transiciones y texturas que conectan la pieza con la anatomia sin perder profundidad.</p>
-              </div>
-              <small>Textura / fondo / composicion</small>
-            </article>
-          </div>
+          <figure class="studio-gallery__item studio-gallery__item--tall reveal">
+            <img src="https://images.unsplash.com/photo-1562379825-415aea84ebcf?auto=format&fit=crop&w=900&q=82" alt="Tatuaje floral negro en cuello" loading="lazy" decoding="async">
+            <figcaption>Flor negra</figcaption>
+          </figure>
+          <figure class="studio-gallery__item reveal">
+            <img src="https://images.unsplash.com/photo-1758404255679-9afd847ede1c?auto=format&fit=crop&w=900&q=82" alt="Tatuaje geometrico con sombras durante el proceso" loading="lazy" decoding="async">
+            <figcaption>Geometria</figcaption>
+          </figure>
+          <figure class="studio-gallery__item studio-gallery__item--wide reveal">
+            <img src="https://images.unsplash.com/photo-1597852075234-fd721ac361d3?auto=format&fit=crop&w=1100&q=82" alt="Detalle de tatuador trabajando una pieza en brazo" loading="lazy" decoding="async">
+            <figcaption>Linea en sesion</figcaption>
+          </figure>
+          <figure class="studio-gallery__item reveal">
+            <img src="https://images.unsplash.com/photo-1479767574301-a01c78234a0c?auto=format&fit=crop&w=900&q=82" alt="Brazo con tatuaje oscuro de alto contraste" loading="lazy" decoding="async">
+            <figcaption>Blackwork</figcaption>
+          </figure>
         </div>
       </div>
     </section>

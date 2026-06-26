@@ -12,6 +12,10 @@ const lightboxTitle = document.querySelector("[data-lightbox-title]");
 const lightboxClose = document.querySelector("[data-lightbox-close]");
 const bookingForm = document.querySelector("[data-booking-form]");
 const formStatus = document.querySelector("[data-form-status]");
+const scrollGallery = document.querySelector("[data-scroll-gallery]");
+const scrollGalleryStage = scrollGallery?.querySelector(".scroll-gallery__stage");
+const scrollGalleryGrid = document.querySelector("[data-scroll-grid]");
+const scrollGalleryImages = scrollGalleryGrid?.querySelectorAll("img") || [];
 const whatsappPhone = "34643665793";
 
 if (yearTarget) {
@@ -26,21 +30,39 @@ const setHeaderState = () => {
 setHeaderState();
 window.addEventListener("scroll", setHeaderState, { passive: true });
 
+const closeNav = () => {
+  if (!header || !navToggle) return;
+  header.classList.remove("is-open");
+  document.body.classList.remove("nav-open");
+  navToggle.setAttribute("aria-expanded", "false");
+  const navLabel = navToggle.querySelector(".sr-only");
+  if (navLabel) navLabel.textContent = "Abrir menu";
+};
+
 if (navToggle && header && nav) {
+  const navLabel = navToggle.querySelector(".sr-only");
+
   navToggle.addEventListener("click", () => {
     const isOpen = header.classList.toggle("is-open");
     document.body.classList.toggle("nav-open", isOpen);
     navToggle.setAttribute("aria-expanded", String(isOpen));
-    navToggle.querySelector(".sr-only").textContent = isOpen ? "Cerrar menu" : "Abrir menu";
+    if (navLabel) navLabel.textContent = isOpen ? "Cerrar menu" : "Abrir menu";
   });
 
   nav.addEventListener("click", (event) => {
     const link = event.target.closest("a");
     if (!link) return;
-    header.classList.remove("is-open");
-    document.body.classList.remove("nav-open");
-    navToggle.setAttribute("aria-expanded", "false");
-    navToggle.querySelector(".sr-only").textContent = "Abrir menu";
+    closeNav();
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!header.classList.contains("is-open")) return;
+    if (header.contains(event.target)) return;
+    closeNav();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.matchMedia("(min-width: 921px)").matches) closeNav();
   });
 }
 
@@ -87,14 +109,43 @@ lightbox?.addEventListener("click", (event) => {
   if (event.target === lightbox) closeLightbox();
 });
 
+if (scrollGallery && scrollGalleryStage && scrollGalleryGrid && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  let galleryTicking = false;
+
+  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+  const updateScrollGallery = () => {
+    galleryTicking = false;
+
+    const rect = scrollGalleryStage.getBoundingClientRect();
+    const distance = Math.max(1, scrollGalleryStage.offsetHeight - window.innerHeight);
+    const progress = clamp(-rect.top / distance, 0, 1);
+    const rotation = -18 + progress * 292;
+    const scale = 0.68 + progress * 1.12;
+    const imageRotation = -rotation;
+    const imageScale = 1.18 - progress * 0.04;
+
+    scrollGalleryGrid.style.transform = `rotate(${rotation}deg) scale(${scale})`;
+    scrollGalleryImages.forEach((image) => {
+      image.style.transform = `rotate(${imageRotation}deg) scale(${imageScale})`;
+    });
+  };
+
+  const requestGalleryUpdate = () => {
+    if (galleryTicking) return;
+    galleryTicking = true;
+    window.requestAnimationFrame(updateScrollGallery);
+  };
+
+  updateScrollGallery();
+  window.addEventListener("scroll", requestGalleryUpdate, { passive: true });
+  window.addEventListener("resize", requestGalleryUpdate);
+}
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     closeLightbox();
-    header?.classList.remove("is-open");
-    document.body.classList.remove("nav-open");
-    navToggle?.setAttribute("aria-expanded", "false");
-    const navLabel = navToggle?.querySelector(".sr-only");
-    if (navLabel) navLabel.textContent = "Abrir menu";
+    closeNav();
   }
 });
 
