@@ -210,6 +210,11 @@ button {
   color: var(--paper);
 }
 
+.site-nav .nav-cta,
+.site-nav .nav-call {
+  padding-inline: 24px;
+}
+
 .nav-toggle {
   position: relative;
   z-index: 4;
